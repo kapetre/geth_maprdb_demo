@@ -35,10 +35,8 @@ docker build -t jupyterlab .
 
 # 2. Start the docker container
 docker run -it \
---name jupy \
+--name jupyterlab \
 -v /mfs/democluster/user/testuser/geth_maprdb_demo:/Notebooks \
 -p 8895:8895 jupyterlab 
 ```
-Connect to the notebook via http://<yourhost>:8895 , using the token `thereisnospoon` configured in start-nb.sh
-
-
+Connect to the notebook via http://<yourhost>:8895/lab , using the token `thereisnospoon` configured in start-nb.sh
