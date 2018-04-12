@@ -9,6 +9,10 @@ RUN apt-get update && apt-get install -y libssl-dev
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 
+# https://github.com/jupyter-incubator/sparkmagic extensions
+RUN jupyter nbextension enable --py --sys-prefix widgetsnbextension
+RUN jupyter serverextension enable --py sparkmagic
+
 RUN mkdir /Notebooks
 RUN chown $NB_USER /Notebooks
 
