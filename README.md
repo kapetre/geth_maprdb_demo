@@ -1,5 +1,8 @@
 # MapRDB Data Access Gateway Demo
-This demo pulls data from the Ethereum Blockchain through a local geth client (running in a docker container), perform light transformations to obtain valid JSON transaction records, and push the data into an existing Mapr-DB cluster (using the data-access-gateway RESTful iterface). We then use the REST api to send a query to MapR-DB, and retrieve selected attributes of "interesting" transactions (for example, those whose creators significantly overpaid to prioritize) for further analysis.
+This demonstrates how to pull data from the Ethereum Blockchain through a local geth client (running in a docker container), perform light transformations to obtain valid JSON transaction records, and push the data into an existing Mapr-DB cluster (using the data-access-gateway RESTful iterface). We then use the REST api to send a query to MapR-DB, and retrieve selected attributes of "interesting" transactions (for example, those whose creators significantly overpaid to prioritize) for further analysis.
+
+### Architecture
+<img src="geth_maprdb_architecgture.png" width="800">
 
 ### Before you begin
 This demo is easiest to run from the edge node of a secured mapr cluster. An "edge node" here means a linux host (i'm using centos7.4) capable of running docker containers, and no special MapR packages or configurations required. A functional mapr cluster is also assumed, with Data Access Gateways accessible from the edge node. 
